@@ -2,7 +2,7 @@
 require('deps')
 
 -- Installing packages through Packer
-use = require("packer").use
+local use = require("packer").use
 require("packer").startup(function()
   -- Package manager
   use 'wbthomason/packer.nvim'
@@ -35,10 +35,22 @@ require("packer").startup(function()
 
   -- gv (git view)
   use 'junegunn/gv.vim'
+
+  -- lspconfig & friends
+  use 'neovim/nvim-lspconfig'
 end)
 
 -- Remaining configuration through modules
+vim.cmd [[
+  set expandtab
+  set autoindent
+  set shiftwidth=2
+  set tabstop=2
+  set softtabstop=2
+]]
+
 require('theme')
 require('keys')
 require('tree')
 require('telescope')
+require('lsp-lua')
