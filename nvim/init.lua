@@ -1,5 +1,5 @@
 -- Prepare dependencies
-require('lua/deps')
+require('deps')
 
 -- Installing packages through Packer
 use = require("packer").use
@@ -38,7 +38,7 @@ require("packer").startup(function()
 end)
 
 -- Remaining configuration through modules
-require('lua/theme')
-require('lua/keys')
-require('lua/tree')
-require('lua/telescope')
+require('theme')
+require('keys')
+require('tree')
+require('telescope')
