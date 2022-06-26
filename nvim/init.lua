@@ -30,7 +30,11 @@ require("packer").startup(function()
     run = ':TSUpdate'
   }
 
+  -- Fugitive
+  use 'tpope/vim-fugitive'
 
+  -- gv (git view)
+  use 'junegunn/gv.vim'
 end)
 
 -- Remaining configuration through modules
