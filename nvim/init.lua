@@ -22,6 +22,18 @@ require("packer").startup(function()
     }
   }
 
+  -- Telescope (find files)
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = { {'nvim-lua/plenary.nvim'} }
+  }
+
+  -- Treesitter
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate'
+  }
+
 
 end)
 
@@ -56,3 +68,6 @@ map("n", "<Leader>j", "<C-W><C-J>", { silent = true })
 
 -- Toggle NVim tree
 map("n", "<Leader>t", ":NvimTreeToggle<CR>", { silent = true })
+
+-- Tree-sitter find file
+map("n", "<Leader>f", ":Telescope find_files<CR>", { silent = true })
